@@ -1,0 +1,20 @@
+version: "1.0"
+
+services:
+  database:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: sdn_auth
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: N0M3L0S3
+      
+  app:
+    image: node:18.17.0
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: npm run dev 
+    ports:
+      - "3000:3000"
