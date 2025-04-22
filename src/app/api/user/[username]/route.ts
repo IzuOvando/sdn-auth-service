@@ -21,6 +21,7 @@ export async function GET(
         select: {
             username: true,
             rol: true,
+            password: true
         },
     });
 
